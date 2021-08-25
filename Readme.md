@@ -1,6 +1,6 @@
 
 
-GoLang Task with Ministry of Programming - Ervin Beciragic
+GoLang Task with MoP - EB
 ======================
 
 REST API that will allow users to register/login, after which it will be possible to use all other endpoints.
@@ -18,6 +18,7 @@ This api mostly handles purchases, with basic functionality.
     - [GO & MySQL](#go) or
     - [Docker](#docker)
 - [Running the app](#running)
+- [Testing](#testing)
 
 ## Prerequirements
 
