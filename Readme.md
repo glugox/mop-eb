@@ -17,6 +17,7 @@ This api mostly handles purchases, with basic functionality.
 - [Prerequirements](#prerequirements)
     - [GO & MySQL](#go) or
     - [Docker](#docker)
+- [Data Migration](#data-migration)
 - [Running the app](#running)
 - [Testing](#testing)
 
