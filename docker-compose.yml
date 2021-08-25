@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+
+  db:
+    image: mysql:5.7.22
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: mop
+    container_name: mop-db
+    ports:
+      - 33066:3306
+    volumes:
+      - mop-data:/var/lib/mysql
+    networks:
+      - fullstack
+
+  web:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/mop
+    depends_on:
+      - db
+    container_name: mop-web
+    environment:
+      - 'DB_PORT=3306'
+      - 'DB_HOST=db'
+    networks:
+      - fullstack
+
+# persisted storage
+volumes:
+  mop-data:
+
+networks:
+  fullstack:
+    driver: bridge
